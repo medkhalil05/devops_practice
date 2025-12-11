@@ -15,7 +15,7 @@ jobs:
          docker build -t medkhalil05/devops_practice:${{ env.SHORT_SHA }} .
    - name: Log in to Docker Hub
      run:      
-          echo "${{ secrets.DOCKERHUB_TOKEN }}" | docker login -u "${{ secrets.DOCKERHUB_USERNAME }}" --password-stdin
+          echo "${{ secrets.DOCKERHUB_SECRET }}" | docker login -u "${{ secrets.DOCKERHUB_USERNAME }}" --password-stdin
    - name: Push Docker image
      run:
           docker push medkhalil05/devops_practice:${{ env.SHORT_SHA }}
