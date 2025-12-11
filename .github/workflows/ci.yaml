@@ -18,4 +18,4 @@ jobs:
           echo "${{ secrets.DOCKERHUB_SECRET }}" | docker login -u "mohamedkhalil05" --password-stdin
    - name: Push Docker image
      run:
-          docker push medkhalil05/devops_practice:${{ env.SHORT_SHA }}
+          docker push mohamedkhalil05/devops_practice:${{ env.SHORT_SHA }}
