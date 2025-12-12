@@ -1,0 +1,25 @@
+
+# Ignorer l'environnement virtuel Python
+mon_env/
+venv/
+env/
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+.Python
+
+# Ignorer les fichiers de développement
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# Ignorer les fichiers système
+.DS_Store
+Thumbs.db
+
+# Ignorer les dépendances Python
+*.egg-info/
+dist/
+build/
