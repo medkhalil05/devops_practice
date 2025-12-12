@@ -1,0 +1,19 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: complete-devops-practice
+  namespace: argocd
+spec:
+  project: default
+  source:
+   repoURL: 'https://github.com/medkhalil05/devops_practice'
+   targetRevision: HEAD
+   path: devops_practice_h
+  destination: 
+    server: "https://kubernetes.default.svc" 
+    namespace: default
+  syncPolicy:
+    automated:
+      prune: true
+      selfHeal: true
+      

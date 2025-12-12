@@ -14,8 +14,18 @@ jobs:
      run: 
          docker build -t mohamedkhalil05/devops_practice:${{ env.SHORT_SHA }} .
    - name: Log in to Docker Hub
-     run:      
+     run:   
           echo "${{ secrets.DOCKERHUB_SECRET }}" | docker login -u "mohamedkhalil05" --password-stdin
    - name: Push Docker image
      run:
           docker push mohamedkhalil05/devops_practice:${{ env.SHORT_SHA }}
+   - name: Configure git author
+     run: |
+          git config --global user.email "mohamed.aboussaad2-etu@etu.univh2c.ma"
+          git config --global user.name "medkhalil05"       
+   - name: update helm chart
+     run: |
+          sed -i 's|tag: .*|tag: "${{ env.SHORT_SHA }}"|g' devops_practice_h/values.yaml
+          git add ./devops_practice_h/values.yaml
+          git commit -m "Update image tag to ${{ env.SHORT_SHA }}"
+          git push origin main       
