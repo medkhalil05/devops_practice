@@ -4,6 +4,12 @@ terraform {
       source = "scott-the-programmer/minikube"
       version = "0.4.2"
     }
+    kubernetes = {
+      source = "hashicorp/kubernetes"
+    }
+    helm = {
+      source = "hashicorp/helm"
+    }
   }
 }
 
