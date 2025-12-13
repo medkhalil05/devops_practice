@@ -1,6 +1,6 @@
 image:
   repository: mohamedkhalil05/devops_practice
-  tag: "5214708"
+  tag: "5a5d4cb"
   pullPolicy: IfNotPresent
 service:
   type: ClusterIP
