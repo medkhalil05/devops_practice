@@ -22,6 +22,7 @@ def home():
     <p>
         Ces innovations ont transformé la façon dont les gens communiquent, travaillent et partagent les informations dans le monde entier.
     </p>
+    <h1>Green Boys</h1>
     """
     return history
 
